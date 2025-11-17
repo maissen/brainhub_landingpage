@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainhub - Educational Social Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/logo_512.png">
+</head>
+
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">🧠 Brainhub</div>
+            <div class="header-controls">
+                <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">🇬🇧 EN</button>
+                    <button class="lang-btn" data-lang="fr">🇫🇷 FR</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1>Welcome to Brainhub</h1>
+            <p class="subtitle">
+                An educational social media platform designed for adults to 
+                <span class="highlight">share insights</span>, 
+                <span class="highlight">explore ideas</span>, and engage in 
+                <span class="highlight">meaningful discussions</span>. 
+                Built with Flutter and FastAPI, it offers a clean, modern interface and real-time interaction to make 
+                learning and connection effortless.
+            </p>
+            <div class="download-buttons">
+                <a href="#" class="cta-btn" id="downloadPcBtn">
+                    <svg class="btn-icon" viewBox="0 0 88 88" fill="currentColor">
+                        <path d="M0,12.402,35.687,7.945,35.687,42.694,0,42.694Z"/>
+                        <path d="M0,45.925,35.687,45.925,35.687,80.674,0,76.217Z"/>
+                        <path d="M39.996,6.906,87.314,0,87.314,41.593,39.996,41.593Z"/>
+                        <path d="M39.996,46.626,87.314,46.626,87.314,88.219,39.996,81.313Z"/>
+                    </svg>
+                    Download for Windows
+                </a>
+                <a href="#" class="cta-btn cta-btn-secondary" id="downloadAndroidBtn">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.6,9.48l1.84-3.18c0.16-0.31,0.04-0.69-0.26-0.85c-0.29-0.15-0.65-0.06-0.83,0.22l-1.88,3.24 c-2.86-1.21-6.08-1.21-8.94,0L5.65,5.67c-0.19-0.29-0.58-0.38-0.87-0.2C4.5,5.65,4.41,6.01,4.56,6.3L6.4,9.48 C3.3,11.25,1.28,14.44,1,18h22C22.72,14.44,20.7,11.25,17.6,9.48z M7,15.25c-0.69,0-1.25-0.56-1.25-1.25 c0-0.69,0.56-1.25,1.25-1.25S8.25,13.31,8.25,14C8.25,14.69,7.69,15.25,7,15.25z M17,15.25c-0.69,0-1.25-0.56-1.25-1.25 c0-0.69,0.56-1.25,1.25-1.25s1.25,0.56,1.25,1.25C18.25,14.69,17.69,15.25,17,15.25z"/>
+                    </svg>
+                    Download for Android
+                </a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h3>Share Insights</h3>
+                <p>Connect with like-minded individuals and share your knowledge with a community that values learning.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Explore Ideas</h3>
+                <p>Discover new perspectives and dive deep into topics that matter to you through curated content.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>Meaningful Discussions</h3>
+                <p>Engage in thoughtful conversations with real-time interaction and build lasting connections.</p>
+            </div>
+        </section>
+
+        <section class="screenshots">
+            <h2 class="section-title">Experience Brainhub</h2>
+            <div class="screenshot-grid">
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder">
+                        <span>📱</span>
+                        <p>Feed & Discovery</p>
+                    </div>
+                </div>
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder">
+                        <span>💭</span>
+                        <p>Discussions</p>
+                    </div>
+                </div>
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder">
+                        <span>👤</span>
+                        <p>Profile & Insights</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tech-stack">
+            <h2 class="section-title">Built with Modern Technology</h2>
+            <div class="tech-badges">
+                <div class="tech-badge">Flutter</div>
+                <div class="tech-badge">FastAPI</div>
+                <div class="tech-badge">Real-time</div>
+                <div class="tech-badge">Cross-platform</div>
+                <div class="tech-badge">Web-socket</div>
+                <div class="tech-badge">Docker</div>
+                <div class="tech-badge">Cloud</div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 Brainhub. Empowering minds, one connection at a time.</p>
+            <p>Developed and maintained by Maissen, Fadi & Salim</p>
+        </footer>
+    </div>
+
+    <!-- Snackbar -->
+    <div class="snackbar" id="snackbar">
+        <span class="snackbar-icon">🎉</span>
+        <span id="snackbarMessage">Thank you for downloading!</span>
+        <button class="snackbar-close" onclick="hideSnackbar()">✕</button>
+    </div>
+
+    <script>
+        // 🌍 Translations
+        const translations = {
+            en: {
+                title: "Welcome to Brainhub",
+                subtitle: `An educational social media platform designed for adults to 
+                    <span class="highlight">share insights</span>, 
+                    <span class="highlight">explore ideas</span>, and engage in 
+                    <span class="highlight">meaningful discussions</span>. 
+                    Built with Flutter and FastAPI, it offers a clean, modern interface and real-time interaction to make 
+                    learning and connection effortless.`,
+                downloadPc: "Download for Windows",
+                downloadAndroid: "Download for Android",
+                feature1Title: "Share Insights",
+                feature1Desc: "Connect with like-minded individuals and share your knowledge with a community that values learning.",
+                feature2Title: "Explore Ideas",
+                feature2Desc: "Discover new perspectives and dive deep into topics that matter to you through curated content.",
+                feature3Title: "Meaningful Discussions",
+                feature3Desc: "Engage in thoughtful conversations with real-time interaction and build lasting connections.",
+                sectionScreenshots: "Experience Brainhub",
+                sectionTech: "Built with Modern Technology",
+                footer1: "© 2025 Brainhub. Empowering minds, one connection at a time.",
+                footer2: "Developed and maintained by Maissen, Fadi & Salim",
+            },
+            fr: {
+                title: "Bienvenue sur Brainhub",
+                subtitle: `Une plateforme sociale éducative conçue pour les adultes afin de 
+                    <span class="highlight">partager leurs connaissances</span>, 
+                    <span class="highlight">explorer des idées</span> et 
+                    <span class="highlight">échanger de manière enrichissante</span>. 
+                    Construite avec Flutter et FastAPI, elle offre une interface moderne et des interactions en temps réel pour rendre 
+                    l’apprentissage et la connexion simples et agréables.`,
+                downloadPc: "Télécharger pour Windows",
+                downloadAndroid: "Télécharger pour Android",
+                feature1Title: "Partagez vos connaissances",
+                feature1Desc: "Connectez-vous avec des personnes partageant vos intérêts et échangez vos savoirs dans une communauté qui valorise l’apprentissage.",
+                feature2Title: "Explorez de nouvelles idées",
+                feature2Desc: "Découvrez de nouvelles perspectives et plongez au cœur des sujets qui vous passionnent grâce à un contenu sélectionné avec soin.",
+                feature3Title: "Discussions enrichissantes",
+                feature3Desc: "Participez à des conversations constructives en temps réel et créez des liens durables.",
+                sectionScreenshots: "Découvrez Brainhub",
+                sectionTech: "Construit avec des technologies modernes",
+                footer1: "© 2025 Brainhub. Éveiller les esprits, une connexion à la fois.",
+                footer2: "Développé et maintenu par Maissen, Fadi & Salim",
+            }
+        };
+
+        let currentLang = 'en';
+
+        // 🔄 Language updater
+        function updateLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+
+            document.querySelector('.hero h1').innerHTML = t.title;
+            document.querySelector('.hero .subtitle').innerHTML = t.subtitle;
+
+            document.getElementById('downloadPcBtn').innerHTML = `
+                <svg class="btn-icon" viewBox="0 0 88 88" fill="currentColor">
+                    <path d="M0,12.402,35.687,7.945,35.687,42.694,0,42.694Z"/>
+                    <path d="M0,45.925,35.687,45.925,35.687,80.674,0,76.217Z"/>
+                    <path d="M39.996,6.906,87.314,0,87.314,41.593,39.996,41.593Z"/>
+                    <path d="M39.996,46.626,87.314,46.626,87.314,88.219,39.996,81.313Z"/>
+                </svg>
+                ${t.downloadPc}`;
+
+            document.getElementById('downloadAndroidBtn').innerHTML = `
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.6,9.48l1.84-3.18c0.16-0.31,0.04-0.69-0.26-0.85c-0.29-0.15-0.65-0.06-0.83,0.22l-1.88,3.24 c-2.86-1.21-6.08-1.21-8.94,0L5.65,5.67c-0.19-0.29-0.58-0.38-0.87-0.2C4.5,5.65,4.41,6.01,4.56,6.3L6.4,9.48 C3.3,11.25,1.28,14.44,1,18h22C22.72,14.44,20.7,11.25,17.6,9.48z M7,15.25c-0.69,0-1.25-0.56-1.25-1.25 c0-0.69,0.56-1.25,1.25-1.25S8.25,13.31,8.25,14C8.25,14.69,7.69,15.25,7,15.25z M17,15.25c-0.69,0-1.25-0.56-1.25-1.25 c0-0.69,0.56-1.25,1.25-1.25s1.25,0.56,1.25,1.25C18.25,14.69,17.69,15.25,17,15.25z"/>
+                </svg>
+                ${t.downloadAndroid}`;
+
+            document.querySelectorAll('.feature-card')[0].querySelector('h3').textContent = t.feature1Title;
+            document.querySelectorAll('.feature-card')[0].querySelector('p').textContent = t.feature1Desc;
+
+            document.querySelectorAll('.feature-card')[1].querySelector('h3').textContent = t.feature2Title;
+            document.querySelectorAll('.feature-card')[1].querySelector('p').textContent = t.feature2Desc;
+
+            document.querySelectorAll('.feature-card')[2].querySelector('h3').textContent = t.feature3Title;
+            document.querySelectorAll('.feature-card')[2].querySelector('p').textContent = t.feature3Desc;
+
+            document.querySelector('.screenshots .section-title').textContent = t.sectionScreenshots;
+            document.querySelector('.tech-stack .section-title').textContent = t.sectionTech;
+
+            document.querySelector('footer p:nth-child(1)').textContent = t.footer1;
+            document.querySelector('footer p:nth-child(2)').textContent = t.footer2;
+        }
+
+        // 🌗 Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        let isDarkTheme = true;
+        themeToggle.addEventListener('click', () => {
+            isDarkTheme = !isDarkTheme;
+            document.body.classList.toggle('light-theme');
+            themeToggle.textContent = isDarkTheme ? '🌙' : '☀️';
+            themeToggle.title = isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme';
+        });
+
+        // 🏳️ Language switcher
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = btn.dataset.lang;
+                updateLanguage(lang);
+                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+
+        // 🌟 Stars background
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // 🎉 Snackbar functions
+        let snackbarTimeout;
+        function showSnackbar(message) {
+            const snackbar = document.getElementById('snackbar');
+            const snackbarMessage = document.getElementById('snackbarMessage');
+            snackbarMessage.textContent = message;
+            snackbar.classList.add('show');
+            if (snackbarTimeout) clearTimeout(snackbarTimeout);
+            snackbarTimeout = setTimeout(hideSnackbar, 7000);
+        }
+        function hideSnackbar() {
+            document.getElementById('snackbar').classList.remove('show');
+        }
+
+        //  Download buttons
+        document.getElementById('downloadPcBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            showSnackbar(currentLang === 'fr'
+                ? 'Merci d’avoir téléchargé Brainhub pour Windows !'
+                : 'Thank you for downloading Brainhub for Windows!');
+            const link = document.createElement('a');
+            link.href = 'assets/BrainHub_Windows.rar';
+            link.download = 'BrainHub_Windows.rar';
+            link.click();
+        });
+
+        document.getElementById('downloadAndroidBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            showSnackbar(currentLang === 'fr'
+                ? 'Merci d’avoir téléchargé Brainhub pour Android !'
+                : 'Thank you for downloading Brainhub for Android!');
+            const link = document.createElement('a');
+            link.href = 'assets/BrainHub.apk';
+            link.download = 'BrainHub.apk';
+            link.click();
+        });
+
+        //  Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+</body>
+</html>
